@@ -4,8 +4,7 @@ public class Exercise2 {
 
   public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
-    int num = 0;
-    int userInput;
+    int userInput, num = 0;
 
     for (int i = 0; i < 5; i++) {
       System.out.print("input: ");

@@ -5,8 +5,7 @@ public class Exercise3 {
   public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
     char answer = 'y';
-    int sum = 0;
-    int userInput;
+    int userInput, sum = 0;
 
     System.out.print("Input: ");
     userInput = input.nextInt();

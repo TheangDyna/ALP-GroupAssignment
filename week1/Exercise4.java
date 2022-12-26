@@ -5,8 +5,7 @@ public class Exercise4 {
   public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
     int computer_num = 50;
-    int userInput;
-    int count = 0;
+    int userInput, count = 0;
 
     System.out.print("Input: ");
     userInput = input.nextInt();

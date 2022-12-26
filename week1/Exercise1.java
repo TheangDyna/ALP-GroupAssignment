@@ -4,8 +4,7 @@ public class Exercise1 {
 
   public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
-    int sum = 0;
-    int userInput;
+    int userInput, sum = 0;
 
     while (sum < 50) {
       System.out.print("input: ");
