@@ -7,10 +7,11 @@ public class Exercise4 {
     int computer_num = 50;
     int userInput, count = 0;
 
-    System.out.print("Input: ");
+    System.out.print("Input: "); // run once
     userInput = input.nextInt();
-    count += 1;
-    while (userInput != computer_num) {
+    count++; // count update
+
+    while (userInput != computer_num) { // loop when userInput != 50
       if (userInput > computer_num) {
         System.out.print("your guess is too high.\n");
       } else {
@@ -18,7 +19,7 @@ public class Exercise4 {
       }
       System.out.print("Input: ");
       userInput = input.nextInt();
-      count += 1;
+      count++;
     }
     System.out.print("Well done, you took " + count + " attempt(s)");
 

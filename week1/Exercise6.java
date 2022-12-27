@@ -7,25 +7,26 @@ public class Exercise6 {
     int count = 0, userInput, total = 0, negetiveTotal = 0, positiveTotal = 0;
     float average = 0.0f;
 
-    System.out.print("Input: ");
+    System.out.print("Input: "); // run once
     userInput = input.nextInt();
-    count += 1;
+    count++;
     total += userInput;
-    if(userInput > 0){
-      positiveTotal += 1;
+
+    if(userInput > 0){ // check (+) or (-) and update
+      positiveTotal++;
     }else{
-      negetiveTotal += 1;
+      negetiveTotal++;
     }
 
-    while (userInput != 0) {
+    while (userInput != 0) { // loop when userInput != 0
       System.out.print("Input: ");
       userInput = input.nextInt();
-      count += 1;
+      count++;
       total += userInput;
       if(userInput > 0){
-        positiveTotal += 1;
+        positiveTotal++;
       }else{
-        negetiveTotal += 1;
+        negetiveTotal++;
       }
     }
 
