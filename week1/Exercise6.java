@@ -14,7 +14,7 @@ public class Exercise6 {
 
     if(userInput > 0){ // check (+) or (-) and update
       positiveTotal++;
-    }else{
+    }else if(userInput < 0){
       negetiveTotal++;
     }
 
@@ -25,7 +25,7 @@ public class Exercise6 {
       total += userInput;
       if(userInput > 0){
         positiveTotal++;
-      }else{
+      }else if(userInput < 0){
         negetiveTotal++;
       }
     }
