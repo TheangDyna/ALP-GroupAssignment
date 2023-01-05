@@ -14,7 +14,7 @@ public class Exercise6 {
 
     for (int i = 0; i < num.length(); i++) { // loop all number
       isHex = false; // reset
-      
+
       for (int j = 0; j < validChar.length(); j++) { // each number check with validate charator
         if (Character.toUpperCase(num.charAt(i)) == validChar.charAt(j)) {
           isHex = true;

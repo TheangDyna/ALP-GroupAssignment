@@ -9,7 +9,7 @@ public class Exercise4 {
     int len, digit;
     boolean isTwoDigit = false;
 
-    String[] oneDigit = {
+    String[] oneDigit = { // for one digit
       "", //zero
       "One",
       "Two",
@@ -21,7 +21,7 @@ public class Exercise4 {
       "Eight",
       "Nine",
     };
-    String[] twoDigits = {
+    String[] twoDigits = { // for two digit 10 -> 19
       "Ten",
       "Eleven",
       "Twelve",
@@ -33,7 +33,7 @@ public class Exercise4 {
       "Eighteen",
       "Nineteen",
     };
-    String[] multipleoftens = {
+    String[] multipleoftens = { // for two digit 20 -> 90
       "", // zero
       "", // ten
       "Twenty",
@@ -52,20 +52,21 @@ public class Exercise4 {
     digit = len;
 
     for (int i = 0; i < len; i++) {
-      if (digit == 3) {
+      if (digit == 3) { // read number on digit
+        // find the word [num.charAt(i) == number] => [oneDigit[num.charAt(i) - '0'] == word]
         wordNum += oneDigit[num.charAt(i) - '0'] + " Hundred ";
       }
       if (digit == 2) {
         if (num.charAt(i) - '0' == 1) {
-          isTwoDigit = true;
+          isTwoDigit = true; // skip read and pass to digit 1
         } else {
-          wordNum += multipleoftens[num.charAt(i) - '0'] + " ";
+          wordNum += multipleoftens[num.charAt(i) - '0'] + " "; 
         }
       }
       if (digit == 1) {
-        if(isTwoDigit){
+        if (isTwoDigit) {
           wordNum += twoDigits[num.charAt(i) - '0'];
-        }else{
+        } else {
           wordNum += oneDigit[num.charAt(i) - '0'];
         }
       }

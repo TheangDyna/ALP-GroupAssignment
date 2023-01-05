@@ -7,7 +7,7 @@ public class Exercise5 {
     boolean[] locked = new boolean[456]; // create array and set free space 456
 
     Arrays.fill(locked, false); // set all elements = false
- 
+
     for (int i = 1; i <= player; i++) { // loop player
       for (int j = i; j <= locker; j += i) { // loop locker and skip by player index
         if (locked[j - 1] == false) {
