@@ -1,8 +1,4 @@
-/*
-Team: 4
-ITE M3
-output the longest String(word) in the sentence
- */
+// Group 4
 
 import java.util.Scanner;
 
