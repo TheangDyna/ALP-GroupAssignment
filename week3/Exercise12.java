@@ -4,9 +4,9 @@ class Exercise12 {
 
   public static void main(String[] args) {
     String num, leftNum, rightNum, readLeft = "", readRight = "", readNum = "";
-    int ponitIndex, complete, pointLen = 0;
+    int ponitIndex, complete = 0, pointLen = 0, readLeftLen = 0, readRightlen =
+      0;
     boolean isValid = true;
-    double cleanNum;
 
     String[] hexNum = {
       "0",
@@ -73,12 +73,6 @@ class Exercise12 {
 
     // if validate input
     if (isValid) {
-      // clean number
-      cleanNum = Double.parseDouble(num);
-      num = Double.toString(cleanNum);
-
-      System.out.println(num);
-
       // slipt left and right of point
       ponitIndex = num.indexOf('.');
       if (ponitIndex < 0) {
@@ -139,9 +133,9 @@ class Exercise12 {
         // make a set of four
         if (rightParts[rightParts.length - 1].length() < 4) {
           complete = 4 - rightParts[rightParts.length - 1].length();
-          for (int i = rightParts.length - 1; i < complete; i++) {
+          for (int i = 0; i < complete; i++) {
             rightParts[rightParts.length - 1] =
-              rightParts[rightParts.length - 1] + "0";
+              rightParts[rightParts.length - 1] + "0"; // error loop
           }
         }
 
@@ -152,6 +146,27 @@ class Exercise12 {
               readRight += hexNum[j];
             }
           }
+        }
+      }
+
+      // clean answer
+      readLeftLen = readLeft.length() - 1;
+      while (readLeft.charAt(0) == '0') {
+        if (readLeftLen < 1) {
+          break;
+        }
+        readLeft = readLeft.substring(1);
+        readLeftLen--;
+      }
+
+      if (rightNum.length() > 0) {
+        readRightlen = readRight.length() - 1;
+        while (readRight.charAt(readRight.length() - 1) == '0') {
+          if (readRightlen < 1) {
+            break;
+          }
+          readRight = readRight.substring(0, readRight.length()-1);
+          readRightlen--;
         }
       }
 
