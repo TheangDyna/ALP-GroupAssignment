@@ -52,10 +52,6 @@ class Exercise12 {
     num = input.nextLine();
     input.close();
 
-    // clean number
-    cleanNum = Double.parseDouble(num);
-    num = Double.toString(cleanNum);
-
     // check validate input
     for (int i = 0; i < num.length(); i++) {
       if (
@@ -77,6 +73,11 @@ class Exercise12 {
 
     // if validate input
     if (isValid) {
+      // clean number
+      // cleanNum = Double.parseDouble(num);
+      // num = Double.toString(cleanNum);
+
+      // System.out.println(num);
 
       // slipt left and right of point
       ponitIndex = num.indexOf('.');
@@ -124,7 +125,6 @@ class Exercise12 {
 
       // is right number
       if (rightNum.length() > 0) {
-
         // create space array length
         String[] rightParts = new String[(int) Math.ceil(
           (double) rightNum.length() / 4
