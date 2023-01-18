@@ -74,10 +74,10 @@ class Exercise12 {
     // if validate input
     if (isValid) {
       // clean number
-      // cleanNum = Double.parseDouble(num);
-      // num = Double.toString(cleanNum);
+      cleanNum = Double.parseDouble(num);
+      num = Double.toString(cleanNum);
 
-      // System.out.println(num);
+      System.out.println(num);
 
       // slipt left and right of point
       ponitIndex = num.indexOf('.');
