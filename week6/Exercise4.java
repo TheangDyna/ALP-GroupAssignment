@@ -18,7 +18,6 @@ class ExerciseEleven {
 
     // output
     System.out.println("Orginal Arr");
-    System.out.println("Sort Arr");
     for (int row = 0; row < vector.length; row++) {
       System.out.println(Arrays.toString(vector[row]));
     }
