@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-class ExerciseEleven {
+class Exercise4 {
 
   public static void main(String[] args) {
     // static vector data
@@ -23,21 +23,21 @@ class ExerciseEleven {
     }
 
     // sort by insertion
-    for (int row = 1; row < vector.length; row++) {
-      temp = vector[row]; // key = cuurent element
-      j = row; // j = index and use to break loop
+    for (int row = 1; row < vector.length; row++) {  // loop throw row
+      temp = vector[row];                            // temp = cuurent element
+      j = row;                                       // j = nested loop index and use to break loop
 
-      while (j > 0 && vector[j - 1][1] >= temp[1]) {
-        if (vector[j - 1][1] == temp[1]) {
+      while (j > 0 && vector[j - 1][1] >= temp[1]) { // loop and check with current - 1
+        if (vector[j - 1][1] == temp[1]) {           // if == check x
           if (vector[j - 1][0] >= temp[0]) {
-            vector[j] = vector[j - 1];
+            vector[j] = vector[j - 1];               // current = past, past = current
             vector[j - 1] = temp;
           }
         } else {
-          vector[j] = vector[j - 1];
+          vector[j] = vector[j - 1];                 // current = past, past = current
           vector[j - 1] = temp;
         }
-        j--;
+        j--;                                         // update while loop
       }
     }
 
