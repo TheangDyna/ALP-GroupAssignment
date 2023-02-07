@@ -15,19 +15,51 @@ class Exercise6 {
       { 5.5, 4, -0.5 },
     };
 
-    // init distance arr
-    double[] distances = new double[points.length];
+    // storage
+    int indexP1 = 0, indexP2 = 1;
+    double nearest, distance;
 
-    // for(int row = 0; row < points.length; row++){
-    //   for(int col = 0; col < points[row].length; col++){
-    //     System.out.print(points[row][col]+ " ");
-    //   }
-    //   System.out.println("");
-    // }
+    nearest =
+      Math.sqrt(
+        Math.pow((points[1][0] - points[0][0]), 2) +
+        Math.pow((points[1][1] - points[0][1]), 2) +
+        Math.pow((points[1][2] - points[0][2]), 2)
+      );
+
+    for (int i = 1; i < points.length; i++) {
+      for (int j = i + 1; j < points.length; j++) {
+        distance =
+          Math.sqrt(
+            Math.pow((points[j][0] - points[i][0]), 2) +
+            Math.pow((points[j][1] - points[i][1]), 2) +
+            Math.pow((points[j][2] - points[i][2]), 2)
+          );
+        if (nearest >= distance) {
+          indexP1 = i;
+          indexP2 = j;
+          nearest = distance;
+        }
+      }
+    }
 
     // test logic
-    double distance = Math.pow((points[1][0] - points[0][0]), 2);
-    System.out.print(Math.sqrt(distance));
-    
+    // System.out.println(
+    //   Math.sqrt(
+    //     Math.pow((points[1][0] - points[0][0]), 2) +
+    //     Math.pow((points[1][1] - points[0][1]), 2) +
+    //     Math.pow((points[1][2] - points[0][2]), 2)
+    //   )
+    // );
+    // System.out.println(Math.round(4.1151111 * 100.0) / 100.0);
+
+    System.out.println(
+      "from " +
+      Arrays.toString(points[indexP1]) +
+      " to " +
+      Arrays.toString(points[indexP2]) +
+      " have " +
+      (Math.round(nearest * 100.0) / 100.0) +
+      " is a nearest distance."
+    );
   }
 }
