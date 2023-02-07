@@ -15,26 +15,33 @@ class Exercise6 {
       { 5.5, 4, -0.5 },
     };
 
-    // storage
+    // temp variable
     int indexP1 = 0, indexP2 = 1;
     double nearest, distance;
 
+    // do once to get default value
     nearest =
-      Math.sqrt(
-        Math.pow((points[1][0] - points[0][0]), 2) +
-        Math.pow((points[1][1] - points[0][1]), 2) +
-        Math.pow((points[1][2] - points[0][2]), 2)
+      Math.sqrt( // sqare root
+        Math.pow((points[1][0] - points[0][0]), 2) + // (x2 - x1) ^ 2
+        Math.pow((points[1][1] - points[0][1]), 2) + // (y2 - y1) ^ 2
+        Math.pow((points[1][2] - points[0][2]), 2) // (z2 - z1) ^ 2
       );
 
-    for (int i = 1; i < points.length; i++) {
-      for (int j = i + 1; j < points.length; j++) {
+    /*
+     * point: A, B, C, D
+     * posible distance: AB, AC, AD, BA, BC, BD, CA, CB, CD, DA, DB, DC
+     * remove dublecate: AB, AC, AD, BC, BD, CD
+     */
+
+    for (int i = 0; i < points.length; i++) { // loop all row
+      for (int j = i + 1; j < points.length; j++) { // calulate from i + 1
         distance =
           Math.sqrt(
             Math.pow((points[j][0] - points[i][0]), 2) +
             Math.pow((points[j][1] - points[i][1]), 2) +
             Math.pow((points[j][2] - points[i][2]), 2)
           );
-        if (nearest >= distance) {
+        if (nearest >= distance) { // compare each distance
           indexP1 = i;
           indexP2 = j;
           nearest = distance;
