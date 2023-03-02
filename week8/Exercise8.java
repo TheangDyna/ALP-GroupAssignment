@@ -15,7 +15,7 @@ class Exercise8 {
 
     }
 
-    // method checkValidPassword allow paramat "password"
+    // method checkValidPassword allow parameter "password"
     public static void checkValidPassword(String password) {
 
         // Check length

@@ -22,7 +22,7 @@ class Exercise3 {
         System.out.println();
     }
 
-    // method generatePalindromes allow paramat "count"
+    // method generatePalindromes allow parameter "count"
     public static int[] generatePalindromes(int count) {
         int[] result = new int[count];
         int num = 0;

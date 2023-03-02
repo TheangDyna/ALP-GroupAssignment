@@ -17,7 +17,7 @@ class Exercise7 {
 
     }
 
-    // method removeSubstring allow paramat "string, substring"
+    // method removeSubstring allow parameter "string, substring"
     public static String removeSubstring(String string, String substring) {
         if (substring.isEmpty()) {
             return string;

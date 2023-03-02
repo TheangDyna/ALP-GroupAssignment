@@ -18,7 +18,7 @@ class Exercise6 {
 
     }
 
-    // method isAnagram allow paramat "str1, str"
+    // method isAnagram allow parameter "str1, str"
     public static boolean isAnagram(String str1, String str2) {
 
         // remove space and convert to lowercase
