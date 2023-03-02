@@ -21,6 +21,7 @@ class Exercise1 {
             }
         }
 
+        // print
         // loop all row and col
         for (int row = 0; row < 10; row++) {
             for (int col = 0; col < 10; col++) {
