@@ -1,8 +1,7 @@
 class Exercise17 {
 
     public static void main(String[] args) {
-        // int[] arr = {1, 2, 3, 4, 4, 5, 6, 6, 7};
-        int[] arr = { 1, 2, 3, 2, 2 };
+        int[] arr = {1, 2, 3, 4, 4, 5, 6, 6, 7};
 
         removeDuplicate(arr);
 
