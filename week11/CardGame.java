@@ -8,14 +8,14 @@ class CardGame {
 
     public static void main(String[] args) {
 
-        // inital player as arraylist
+        // initial player
         ArrayList<String> computer = new ArrayList<>();
         ArrayList<String> user = new ArrayList<>();
 
-        // genarate cards in a deck
+        // genarate cards for a deck
         ArrayList<String> deck = generateDeck();
 
-        // shuffle cards in deck
+        // shuffle cards
         Collections.shuffle(deck);
 
         // dealing card
@@ -24,7 +24,7 @@ class CardGame {
             user.add(deck.remove(0));
         }
 
-        // display
+        // display for user once
         System.out.println("you: " + user);
 
         // isBoom
@@ -33,6 +33,7 @@ class CardGame {
             // display
             System.out.println("computer: " + computer);
             System.out.println(winner(totalRanks(computer), totalRanks(user)));
+
         } else {
 
             // computer pull
@@ -40,14 +41,14 @@ class CardGame {
                 computer.add(deck.remove(deck.size() - 1));
             }
 
-            // ask user pull
+            // ask user to pull
             if (isUserPull()) {
                 user.add(deck.remove(deck.size() - 1));
             }
 
-            // display win
-            System.out.println("computer: " + computer);
+            // display final cards of player and result
             System.out.println("you: " + user);
+            System.out.println("computer: " + computer);
             System.out.println(winner(totalRanks(computer), totalRanks(user)));
         }
 
@@ -75,6 +76,7 @@ class CardGame {
         int totalRanks = 0;
         String totalStr;
 
+        // on 3 cards check 3 pic
         if (playerCards.size() > 2) {
             if (isThreePic(playerCards)) {
                 totalRanks = 10;
@@ -82,53 +84,54 @@ class CardGame {
             }
         }
 
+        // calculate player cards
         for (int i = 0; i < playerCards.size(); i++) {
             totalRanks += getRank(playerCards.get(i));
         }
 
+        // count scores
         totalStr = totalRanks + "";
         totalRanks = Integer.parseInt(totalStr.charAt(totalStr.length() - 1) + "");
 
         return totalRanks;
     }
 
+    // change to arraylist
+    // get rank only one card
     public static int getRank(String card) {
         int rank = 0;
-        String arr[] = card.split(" ");
 
-        if (arr[0].equals("Ace")) {
+        if (card.split(" ")[0].equals("Ace")) {
             rank += 1;
-        } else if (arr[0].equals("10") || arr[0].equals("Jack") || arr[0].equals("Queen") || arr[0].equals("King")) {
+        } else if (card.split(" ")[0].equals("10") || card.split(" ")[0].equals("Jack")
+                || card.split(" ")[0].equals("Queen") || card.split(" ")[0].equals("King")) {
             rank += 0;
         } else {
-            rank += Integer.parseInt(arr[0]);
+            rank += Integer.parseInt(card.split(" ")[0]);
         }
 
         return rank;
     }
 
     public static boolean isBoom(int totalRanks) {
-        boolean isBoom = false;
 
         if (totalRanks > 7) {
-            isBoom = true;
+            return true;
         }
 
-        return isBoom;
+        return false;
     }
 
     public static String winner(int computerScores, int userScores) {
-        String winnerMessage;
 
         if (computerScores == userScores) {
-            winnerMessage = "draw";
-        } else if (computerScores > userScores) {
-            winnerMessage = "computer win";
-        } else {
-            winnerMessage = "user win";
+            return "draw";
+        }
+        if (computerScores > userScores) {
+            return "computer win";
         }
 
-        return winnerMessage;
+        return "user win";
     }
 
     public static boolean isComputerPull(int computerScores) {
@@ -139,15 +142,18 @@ class CardGame {
         if (computerScores < 4) {
             return true;
         }
-        // 4 80%
+
+        // 4 -> 80%
         if (computerScores < 5 && value < 80) {
             return true;
         }
-        // 5 40%
+
+        // 5 -> 40%
         if (computerScores < 6 && value < 40) {
             return true;
         }
-        // 6 10%
+
+        // 6 -> 10%
         if (computerScores < 7 && value < 10) {
             return true;
         }
