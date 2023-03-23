@@ -96,21 +96,16 @@ class CardGame {
         return totalRanks;
     }
 
-    // change to arraylist
-    // get rank only one card
     public static int getRank(String card) {
-        int rank = 0;
 
         if (card.split(" ")[0].equals("Ace")) {
-            rank += 1;
+            return 1;
         } else if (card.split(" ")[0].equals("10") || card.split(" ")[0].equals("Jack")
                 || card.split(" ")[0].equals("Queen") || card.split(" ")[0].equals("King")) {
-            rank += 0;
+            return 0;
         } else {
-            rank += Integer.parseInt(card.split(" ")[0]);
+            return Integer.parseInt(card.split(" ")[0]);
         }
-
-        return rank;
     }
 
     public static boolean isBoom(int totalRanks) {
